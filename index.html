@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Biblioteca Escolar EPM · Inquérito de Satisfação</title>
+<meta name="description" content="Inquérito de satisfação da Biblioteca Escolar da Escola Profissional do Montijo — ajude-nos a melhorar." />
+<link rel="icon" href="assets/img/epm-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="mockup-flag" role="note">
+  <span>🧪 Pré-visualização de interface — este formulário é ilustrativo e não regista respostas.</span>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <img src="assets/img/epm-logo.png" alt="Logótipo EPM" class="brand-logo" />
+      <div class="brand-text">
+        <strong>Biblioteca Escolar</strong>
+        <span>Escola Profissional do Montijo</span>
+      </div>
+    </a>
+    <a class="btn btn-ghost" href="#inquerito">Responder ao inquérito</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-shapes" aria-hidden="true">
+      <svg class="shape shape-books" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="140" width="180" height="14" rx="4" fill="currentColor" opacity=".15"/>
+        <rect x="20" y="90" width="26" height="60" rx="3" fill="currentColor" opacity=".5"/>
+        <rect x="52" y="70" width="26" height="80" rx="3" fill="currentColor" opacity=".7"/>
+        <rect x="84" y="100" width="26" height="50" rx="3" fill="currentColor" opacity=".4"/>
+        <rect x="116" y="60" width="26" height="90" rx="3" fill="currentColor" opacity=".6"/>
+        <rect x="148" y="85" width="26" height="65" rx="3" fill="currentColor" opacity=".3"/>
+      </svg>
+      <svg class="shape shape-circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50" fill="currentColor"/></svg>
+    </div>
+
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Inquérito de Satisfação dos Utilizadores</p>
+      <h1>Ajude-nos a tornar a<br /><em>biblioteca</em> ainda melhor.</h1>
+      <p class="hero-lead">
+        A tua opinião conta. Este inquérito rápido (2 minutos) ajuda a equipa da Biblioteca Escolar
+        a perceber o que está a funcionar bem e o que pode melhorar — dos livros aos computadores,
+        do atendimento ao espaço.
+      </p>
+      <div class="hero-actions">
+        <a href="#inquerito" class="btn btn-primary">Começar o inquérito</a>
+        <div class="hero-meta">
+          <span>⏱️ ~2 min</span>
+          <span>🔒 Anónimo</span>
+          <span>📚 12 perguntas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="inquerito">
+    <div class="wrap form-wrap">
+
+      <form class="survey-card" onsubmit="return false;">
+
+        <div class="survey-progress" aria-hidden="true">
+          <div class="survey-progress-bar" style="width: 28%;"></div>
+        </div>
+
+        <div class="survey-head">
+          <h2>Inquérito de Satisfação — Biblioteca Escolar</h2>
+          <p>Ajude-nos a melhorar! As tuas respostas são confidenciais e servem apenas para
+             fins de avaliação interna do serviço da biblioteca.</p>
+        </div>
+
+        <!-- SECÇÃO 1 -->
+        <fieldset class="q-block q-section">
+          <legend class="section-title"><span class="section-num">01</span>Sobre ti</legend>
+
+          <div class="q">
+            <label class="q-label">Sexo</label>
+            <div class="pill-options">
+              <label class="pill"><input type="radio" name="sexo"><span>Masculino</span></label>
+              <label class="pill"><input type="radio" name="sexo"><span>Feminino</span></label>
+            </div>
+          </div>
+
+          <div class="q">
+            <label class="q-label">Idade</label>
+            <div class="pill-options">
+              <label class="pill"><input type="radio" name="idade"><span>≤ 14</span></label>
+              <label class="pill"><input type="radio" name="idade" checked><span>15–18</span></label>
+              <label class="pill"><input type="radio" name="idade"><span>19–21</span></label>
+              <label class="pill"><input type="radio" name="idade"><span>22–25</span></label>
+              <label class="pill"><input type="radio" name="idade"><span>26–35</span></label>
+              <label class="pill"><input type="radio" name="idade"><span>&gt; 35</span></label>
+            </div>
+          </div>
+
+          <div class="q">
+            <label class="q-label">Modalidade que frequentas</label>
+            <div class="pill-options">
+              <label class="pill"><input type="radio" name="modalidade"><span>Profissional</span></label>
+              <label class="pill"><input type="radio" name="modalidade"><span>CEF</span></label>
+              <label class="pill"><input type="radio" name="modalidade"><span>Outros</span></label>
+            </div>
+          </div>
+
+          <div class="q">
+            <label class="q-label">Residência</label>
+            <div class="pill-options">
+              <label class="pill"><input type="radio" name="residencia"><span>Montijo</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Alcochete</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Moita</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Palmela</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Barreiro</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Setúbal</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Pinhal Novo</span></label>
+              <label class="pill"><input type="radio" name="residencia"><span>Outros</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- SECÇÃO 2 -->
+        <fieldset class="q-block q-section">
+          <legend class="section-title"><span class="section-num">02</span>Recursos &amp; Infraestrutura</legend>
+
+          <div class="q rating-q">
+            <label class="q-label">Internet</label>
+            <div class="scale" data-low="Muito Lenta" data-high="Muito Rápida">
+              <label class="scale-opt"><input type="radio" name="internet"><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="internet"><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="internet" checked><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="internet"><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="internet"><span>5</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Lenta</span><span>Muito Rápida</span></div>
+          </div>
+
+          <div class="q rating-q">
+            <label class="q-label">Computadores</label>
+            <div class="scale">
+              <label class="scale-opt"><input type="radio" name="computadores"><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="computadores"><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="computadores"><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="computadores" checked><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="computadores"><span>5</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Lentos</span><span>Muito Rápidos</span></div>
+          </div>
+
+          <div class="q rating-q">
+            <label class="q-label">Livros e Revistas</label>
+            <div class="scale">
+              <label class="scale-opt"><input type="radio" name="livros"><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="livros"><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="livros"><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="livros" checked><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="livros"><span>5</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Insuficiente</span><span>Mais do que Suficiente</span></div>
+          </div>
+
+          <div class="q rating-q">
+            <label class="q-label">Manuais Escolares</label>
+            <div class="scale">
+              <label class="scale-opt"><input type="radio" name="manuais"><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="manuais"><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="manuais" checked><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="manuais"><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="manuais"><span>5</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Insuficientes</span><span>Mais do que Suficiente</span></div>
+          </div>
+
+          <div class="q rating-q">
+            <label class="q-label">Filmes</label>
+            <div class="scale">
+              <label class="scale-opt"><input type="radio" name="filmes"><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="filmes"><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="filmes" checked><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="filmes"><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="filmes"><span>5</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Insuficiente</span><span>Mais do que Suficiente</span></div>
+          </div>
+        </fieldset>
+
+        <!-- SECÇÃO 3 -->
+        <fieldset class="q-block q-section">
+          <legend class="section-title"><span class="section-num">03</span>A tua opinião</legend>
+
+          <div class="q rating-q">
+            <label class="q-label">Atendimento</label>
+            <div class="scale">
+              <label class="scale-opt"><input type="radio" name="atendimento"><span>1</span></label>
+              <label class="scale-opt"><input type="radio" name="atendimento"><span>2</span></label>
+              <label class="scale-opt"><input type="radio" name="atendimento"><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="atendimento" checked><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="atendimento"><span>5</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Mau</span><span>Muito Bom</span></div>
+          </div>
+
+          <div class="q rating-q highlight">
+            <label class="q-label">Satisfação Geral com a Biblioteca</label>
+            <div class="scale scale-emoji">
+              <label class="scale-opt"><input type="radio" name="satisfacao"><span>😞</span></label>
+              <label class="scale-opt"><input type="radio" name="satisfacao"><span>🙁</span></label>
+              <label class="scale-opt"><input type="radio" name="satisfacao"><span>😐</span></label>
+              <label class="scale-opt"><input type="radio" name="satisfacao" checked><span>🙂</span></label>
+              <label class="scale-opt"><input type="radio" name="satisfacao"><span>😄</span></label>
+            </div>
+            <div class="scale-labels"><span>Muito Insatisfeito</span><span>Muito Satisfeito</span></div>
+          </div>
+
+          <div class="q">
+            <label class="q-label">Sugestões <span class="q-hint">(seleção múltipla)</span></label>
+            <div class="chip-options">
+              <label class="chip"><input type="checkbox"><span>📖 Mais livros</span></label>
+              <label class="chip"><input type="checkbox" checked><span>💻 Mais computadores</span></label>
+              <label class="chip"><input type="checkbox"><span>🎬 Mais DVDs</span></label>
+              <label class="chip"><input type="checkbox"><span>🎲 Mais jogos / materiais lúdicos</span></label>
+              <label class="chip"><input type="checkbox"><span>📰 Mais jornais / revistas</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="survey-footer">
+          <button type="submit" class="btn btn-primary btn-block">Enviar respostas</button>
+          <p class="survey-disclaimer">Este é um protótipo visual — o botão não envia dados.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-logos">
+      <img src="assets/img/epm-logo.png" alt="Escola Profissional do Montijo" class="footer-logo footer-logo-epm" />
+
+      <div class="footer-logo footer-logo-text afpdm-logo" aria-label="AFPDM">
+        <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="#3d4a63"/>
+          <rect x="26" y="2" width="20" height="20" rx="4" fill="#3d4a63"/>
+          <rect x="14" y="14" width="20" height="20" rx="4" fill="#93b93a"/>
+        </svg>
+        <div>
+          <strong>AFPDM</strong>
+          <span>Associação para a Formação Profissional e Desenvolvimento do Montijo</span>
+        </div>
+      </div>
+
+      <div class="footer-logo footer-logo-text sgs-logo" aria-label="Certificação ISO 9001">
+        <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" fill="none" stroke="#9aa0a6" stroke-width="2.5" stroke-dasharray="3 3"/>
+          <circle cx="24" cy="24" r="15" fill="#e8722c"/>
+          <path d="M16 24l5.5 5.5L33 18" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <strong>ISO 9001</strong>
+          <span>Certificação acreditada IPAC</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-copy">© 2026 Biblioteca Escolar · Escola Profissional do Montijo — protótipo de interface, sem recolha de dados.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
