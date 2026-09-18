@@ -314,7 +314,6 @@ a { color: inherit; }
 .footer-logo-text strong { display: block; font-size: 0.85rem; }
 .footer-logo-text span { display: block; font-size: 0.72rem; color: var(--ink-soft); max-width: 220px; }
 .footer-copy { font-size: 0.78rem; color: var(--ink-soft); text-align: center; margin: 0; }
-.footer-credit { font-size: 0.72rem; color: var(--ink-soft); text-align: center; margin: 4px 0 0; opacity: 0.8; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
