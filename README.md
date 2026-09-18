@@ -1,5 +1,7 @@
 # Biblioteca Escolar EPM — Inquérito
 
+Desenvolvido por Pedro Santos.
+
 Inquérito de satisfação da Biblioteca Escolar da
 [Escola Profissional do Montijo](https://epmontijo.edu.pt), baseado no
 [Google Forms original](https://docs.google.com/forms/d/1BG7qmKIpxKoxeYnZAw5Kzr4RBTaxSAEWOehCar7kEd0/edit).
