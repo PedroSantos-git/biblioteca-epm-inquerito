@@ -14,7 +14,7 @@
 <body>
 
 <div class="mockup-flag" role="note">
-  <span>🧪 Pré-visualização de interface — este formulário é ilustrativo e não regista respostas.</span>
+  <span>📚 Inquérito oficial da Biblioteca Escolar — as tuas respostas são anónimas.</span>
 </div>
 
 <header class="site-header">
@@ -26,7 +26,10 @@
         <span>Escola Profissional do Montijo</span>
       </div>
     </a>
-    <a class="btn btn-ghost" href="#inquerito">Responder ao inquérito</a>
+    <nav class="header-actions">
+      <a class="btn btn-ghost" href="#inquerito">Responder ao inquérito</a>
+      <a class="btn btn-ghost btn-stats-link" href="estatisticas.html">Área reservada</a>
+    </nav>
   </div>
 </header>
 
@@ -67,10 +70,10 @@
   <section class="form-section" id="inquerito">
     <div class="wrap form-wrap">
 
-      <form class="survey-card" onsubmit="return false;">
+      <form class="survey-card">
 
         <div class="survey-progress" aria-hidden="true">
-          <div class="survey-progress-bar" style="width: 28%;"></div>
+          <div class="survey-progress-bar" style="width: 8%;"></div>
         </div>
 
         <div class="survey-head">
@@ -95,7 +98,7 @@
             <label class="q-label">Idade</label>
             <div class="pill-options">
               <label class="pill"><input type="radio" name="idade"><span>≤ 14</span></label>
-              <label class="pill"><input type="radio" name="idade" checked><span>15–18</span></label>
+              <label class="pill"><input type="radio" name="idade" required><span>15–18</span></label>
               <label class="pill"><input type="radio" name="idade"><span>19–21</span></label>
               <label class="pill"><input type="radio" name="idade"><span>22–25</span></label>
               <label class="pill"><input type="radio" name="idade"><span>26–35</span></label>
@@ -136,7 +139,7 @@
             <div class="scale" data-low="Muito Lenta" data-high="Muito Rápida">
               <label class="scale-opt"><input type="radio" name="internet"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="internet"><span>2</span></label>
-              <label class="scale-opt"><input type="radio" name="internet" checked><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="internet" required><span>3</span></label>
               <label class="scale-opt"><input type="radio" name="internet"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="internet"><span>5</span></label>
             </div>
@@ -149,7 +152,7 @@
               <label class="scale-opt"><input type="radio" name="computadores"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="computadores"><span>2</span></label>
               <label class="scale-opt"><input type="radio" name="computadores"><span>3</span></label>
-              <label class="scale-opt"><input type="radio" name="computadores" checked><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="computadores" required><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="computadores"><span>5</span></label>
             </div>
             <div class="scale-labels"><span>Muito Lentos</span><span>Muito Rápidos</span></div>
@@ -161,7 +164,7 @@
               <label class="scale-opt"><input type="radio" name="livros"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="livros"><span>2</span></label>
               <label class="scale-opt"><input type="radio" name="livros"><span>3</span></label>
-              <label class="scale-opt"><input type="radio" name="livros" checked><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="livros" required><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="livros"><span>5</span></label>
             </div>
             <div class="scale-labels"><span>Muito Insuficiente</span><span>Mais do que Suficiente</span></div>
@@ -172,7 +175,7 @@
             <div class="scale">
               <label class="scale-opt"><input type="radio" name="manuais"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="manuais"><span>2</span></label>
-              <label class="scale-opt"><input type="radio" name="manuais" checked><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="manuais" required><span>3</span></label>
               <label class="scale-opt"><input type="radio" name="manuais"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="manuais"><span>5</span></label>
             </div>
@@ -184,7 +187,7 @@
             <div class="scale">
               <label class="scale-opt"><input type="radio" name="filmes"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="filmes"><span>2</span></label>
-              <label class="scale-opt"><input type="radio" name="filmes" checked><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="filmes" required><span>3</span></label>
               <label class="scale-opt"><input type="radio" name="filmes"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="filmes"><span>5</span></label>
             </div>
@@ -202,7 +205,7 @@
               <label class="scale-opt"><input type="radio" name="atendimento"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="atendimento"><span>2</span></label>
               <label class="scale-opt"><input type="radio" name="atendimento"><span>3</span></label>
-              <label class="scale-opt"><input type="radio" name="atendimento" checked><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="atendimento" required><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="atendimento"><span>5</span></label>
             </div>
             <div class="scale-labels"><span>Muito Mau</span><span>Muito Bom</span></div>
@@ -214,7 +217,7 @@
               <label class="scale-opt"><input type="radio" name="satisfacao"><span>😞</span></label>
               <label class="scale-opt"><input type="radio" name="satisfacao"><span>🙁</span></label>
               <label class="scale-opt"><input type="radio" name="satisfacao"><span>😐</span></label>
-              <label class="scale-opt"><input type="radio" name="satisfacao" checked><span>🙂</span></label>
+              <label class="scale-opt"><input type="radio" name="satisfacao" required><span>🙂</span></label>
               <label class="scale-opt"><input type="radio" name="satisfacao"><span>😄</span></label>
             </div>
             <div class="scale-labels"><span>Muito Insatisfeito</span><span>Muito Satisfeito</span></div>
@@ -224,7 +227,7 @@
             <label class="q-label">Sugestões <span class="q-hint">(seleção múltipla)</span></label>
             <div class="chip-options">
               <label class="chip"><input type="checkbox"><span>📖 Mais livros</span></label>
-              <label class="chip"><input type="checkbox" checked><span>💻 Mais computadores</span></label>
+              <label class="chip"><input type="checkbox"><span>💻 Mais computadores</span></label>
               <label class="chip"><input type="checkbox"><span>🎬 Mais DVDs</span></label>
               <label class="chip"><input type="checkbox"><span>🎲 Mais jogos / materiais lúdicos</span></label>
               <label class="chip"><input type="checkbox"><span>📰 Mais jornais / revistas</span></label>
@@ -234,7 +237,7 @@
 
         <div class="survey-footer">
           <button type="submit" class="btn btn-primary btn-block">Enviar respostas</button>
-          <p class="survey-disclaimer">Este é um protótipo visual — o botão não envia dados.</p>
+          <p class="survey-disclaimer">As respostas são anónimas e usadas apenas para melhorar o serviço da biblioteca.</p>
         </div>
       </form>
     </div>
@@ -276,6 +279,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
