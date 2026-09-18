@@ -34,28 +34,33 @@ document.addEventListener('DOMContentLoaded', () => {
   inputs.forEach((input) => input.addEventListener('change', updateProgress));
 
   // Perguntas opcionais (secção 2): permitir "desmarcar" clicando de novo na opção já selecionada.
-  // O clique nunca chega diretamente ao <input> (o <span> visível está por cima), por isso
-  // ouvimos no <label> — é ele que recebe o clique e decide se deixa a seleção nativa acontecer.
+  // Um clique no <span> visível gera DOIS eventos "click" a passar pelo <label>: o clique
+  // original (target = span) e o clique que o browser reencaminha para o <input> associado
+  // (target = input, é esse que efetivamente marca a opção). Só reagimos ao segundo, para não
+  // desmarcar imediatamente a opção que acabou de ser selecionada.
   const optionalLabels = form ? Array.from(form.querySelectorAll('.optional-section .scale-opt')) : [];
-  const optionalSelected = {};
   optionalLabels.forEach((label) => {
     const radio = label.querySelector('input[type="radio"]');
     if (!radio) return;
+    let wasChecked = false;
+    const captureState = () => { wasChecked = radio.checked; };
+    label.addEventListener('mousedown', captureState);
+    label.addEventListener('touchstart', captureState);
     label.addEventListener('click', (event) => {
-      if (optionalSelected[radio.name] === radio) {
-        event.preventDefault();
-        radio.checked = false;
-        optionalSelected[radio.name] = null;
-        updateProgress();
-      } else {
-        optionalSelected[radio.name] = radio;
+      if (event.target !== radio) return;
+      if (wasChecked) {
+        // Adiado: o browser ainda aplica o seu próprio "checked = true" depois deste
+        // evento terminar, por isso só conseguimos desmarcar depois disso acontecer.
+        setTimeout(() => {
+          radio.checked = false;
+          updateProgress();
+        }, 0);
       }
     });
   });
 
   function startSurvey() {
     if (form) form.reset();
-    Object.keys(optionalSelected).forEach((name) => { optionalSelected[name] = null; });
     updateProgress();
     showScreen('screen-form');
 
