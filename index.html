@@ -27,7 +27,7 @@
       </div>
     </a>
     <nav class="header-actions">
-      <a class="btn btn-ghost" href="#inquerito">Responder ao inquérito</a>
+      <button type="button" class="btn btn-ghost" id="nav-start-btn">Responder ao inquérito</button>
       <a class="btn btn-ghost btn-stats-link" href="estatisticas.html">Área reservada</a>
     </nav>
   </div>
@@ -35,7 +35,7 @@
 
 <main id="top">
 
-  <section class="hero">
+  <section class="hero screen" id="screen-intro">
     <div class="hero-shapes" aria-hidden="true">
       <svg class="shape shape-books" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="10" y="140" width="180" height="14" rx="4" fill="currentColor" opacity=".15"/>
@@ -57,7 +57,7 @@
         do atendimento ao espaço.
       </p>
       <div class="hero-actions">
-        <a href="#inquerito" class="btn btn-primary">Começar o inquérito</a>
+        <button type="button" class="btn btn-primary" id="start-survey-btn">Começar o inquérito</button>
         <div class="hero-meta">
           <span>⏱️ ~2 min</span>
           <span>🔒 Anónimo</span>
@@ -67,7 +67,7 @@
     </div>
   </section>
 
-  <section class="form-section" id="inquerito">
+  <section class="form-section screen" id="screen-form" hidden>
     <div class="wrap form-wrap">
 
       <form class="survey-card">
@@ -89,7 +89,7 @@
           <div class="q">
             <label class="q-label">Sexo</label>
             <div class="pill-options">
-              <label class="pill"><input type="radio" name="sexo"><span>Masculino</span></label>
+              <label class="pill"><input type="radio" name="sexo" required><span>Masculino</span></label>
               <label class="pill"><input type="radio" name="sexo"><span>Feminino</span></label>
             </div>
           </div>
@@ -109,7 +109,7 @@
           <div class="q">
             <label class="q-label">Modalidade que frequentas</label>
             <div class="pill-options">
-              <label class="pill"><input type="radio" name="modalidade"><span>Profissional</span></label>
+              <label class="pill"><input type="radio" name="modalidade" required><span>Profissional</span></label>
               <label class="pill"><input type="radio" name="modalidade"><span>CEF</span></label>
               <label class="pill"><input type="radio" name="modalidade"><span>Outros</span></label>
             </div>
@@ -118,7 +118,7 @@
           <div class="q">
             <label class="q-label">Residência</label>
             <div class="pill-options">
-              <label class="pill"><input type="radio" name="residencia"><span>Montijo</span></label>
+              <label class="pill"><input type="radio" name="residencia" required><span>Montijo</span></label>
               <label class="pill"><input type="radio" name="residencia"><span>Alcochete</span></label>
               <label class="pill"><input type="radio" name="residencia"><span>Moita</span></label>
               <label class="pill"><input type="radio" name="residencia"><span>Palmela</span></label>
@@ -139,7 +139,7 @@
             <div class="scale" data-low="Muito Lenta" data-high="Muito Rápida">
               <label class="scale-opt"><input type="radio" name="internet"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="internet"><span>2</span></label>
-              <label class="scale-opt"><input type="radio" name="internet" required><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="internet"><span>3</span></label>
               <label class="scale-opt"><input type="radio" name="internet"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="internet"><span>5</span></label>
             </div>
@@ -152,7 +152,7 @@
               <label class="scale-opt"><input type="radio" name="computadores"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="computadores"><span>2</span></label>
               <label class="scale-opt"><input type="radio" name="computadores"><span>3</span></label>
-              <label class="scale-opt"><input type="radio" name="computadores" required><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="computadores"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="computadores"><span>5</span></label>
             </div>
             <div class="scale-labels"><span>Muito Lentos</span><span>Muito Rápidos</span></div>
@@ -164,7 +164,7 @@
               <label class="scale-opt"><input type="radio" name="livros"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="livros"><span>2</span></label>
               <label class="scale-opt"><input type="radio" name="livros"><span>3</span></label>
-              <label class="scale-opt"><input type="radio" name="livros" required><span>4</span></label>
+              <label class="scale-opt"><input type="radio" name="livros"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="livros"><span>5</span></label>
             </div>
             <div class="scale-labels"><span>Muito Insuficiente</span><span>Mais do que Suficiente</span></div>
@@ -175,7 +175,7 @@
             <div class="scale">
               <label class="scale-opt"><input type="radio" name="manuais"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="manuais"><span>2</span></label>
-              <label class="scale-opt"><input type="radio" name="manuais" required><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="manuais"><span>3</span></label>
               <label class="scale-opt"><input type="radio" name="manuais"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="manuais"><span>5</span></label>
             </div>
@@ -187,7 +187,7 @@
             <div class="scale">
               <label class="scale-opt"><input type="radio" name="filmes"><span>1</span></label>
               <label class="scale-opt"><input type="radio" name="filmes"><span>2</span></label>
-              <label class="scale-opt"><input type="radio" name="filmes" required><span>3</span></label>
+              <label class="scale-opt"><input type="radio" name="filmes"><span>3</span></label>
               <label class="scale-opt"><input type="radio" name="filmes"><span>4</span></label>
               <label class="scale-opt"><input type="radio" name="filmes"><span>5</span></label>
             </div>
@@ -240,6 +240,17 @@
           <p class="survey-disclaimer">As respostas são anónimas e usadas apenas para melhorar o serviço da biblioteca.</p>
         </div>
       </form>
+    </div>
+  </section>
+
+  <section class="screen thanks-screen" id="screen-thanks" hidden>
+    <div class="wrap">
+      <div class="thanks-card">
+        <div class="thanks-icon" aria-hidden="true">✓</div>
+        <h1>Obrigado pela tua resposta!</h1>
+        <p>A tua opinião foi registada e vai ajudar-nos a melhorar a biblioteca.</p>
+        <p class="thanks-countdown">A voltar ao início em <span id="thanks-countdown-num">10</span>s…</p>
+      </div>
     </div>
   </section>
 
