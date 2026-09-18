@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="estatisticas.css" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -77,19 +78,29 @@
   <section id="state-dashboard" hidden>
 
     <div id="admin-panel" class="admin-panel" hidden>
-      <h2>Gestão de acessos</h2>
-      <p class="admin-hint">Só tu podes adicionar ou remover pessoas com acesso às estatísticas.</p>
-      <form id="admin-add-form" class="admin-add-form">
-        <input id="admin-new-email" type="email" placeholder="email@exemplo.com" required />
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-      </form>
-      <p id="admin-error" class="admin-error" hidden></p>
-      <ul id="admin-list" class="admin-list"></ul>
+      <div class="admin-panel-head">
+        <div>
+          <h2>Gestão de acessos</h2>
+          <p class="admin-hint">Só tu podes adicionar ou remover pessoas com acesso às estatísticas.</p>
+        </div>
+        <button id="admin-edit-toggle" type="button" class="btn btn-ghost">Editar</button>
+      </div>
+      <div id="admin-content" hidden>
+        <form id="admin-add-form" class="admin-add-form">
+          <input id="admin-new-email" type="email" placeholder="email@exemplo.com" required />
+          <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+        <p id="admin-error" class="admin-error" hidden></p>
+        <ul id="admin-list" class="admin-list"></ul>
+      </div>
     </div>
 
     <div class="stats-head">
-      <p class="eyebrow">Resultados em tempo real</p>
-      <h1>Estatísticas do inquérito de satisfação</h1>
+      <div>
+        <p class="eyebrow">Resultados em tempo real</p>
+        <h1>Estatísticas do inquérito de satisfação</h1>
+      </div>
+      <button id="export-excel-btn" type="button" class="btn btn-ghost">⬇️ Exportar para Excel</button>
     </div>
 
     <div id="kpi-row" class="kpi-row"></div>

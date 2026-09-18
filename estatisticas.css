@@ -51,6 +51,8 @@
 }
 .btn-provider:hover { border-color: var(--navy); transform: translateY(-1px); }
 
+.stats-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
 /* ---------- KPI row ---------- */
 .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
 .kpi-card {
@@ -88,8 +90,10 @@
   border-radius: var(--radius-md);
   padding: 20px 22px;
 }
+.admin-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .admin-panel h2 { font-size: 1.1rem; margin-bottom: 4px; }
-.admin-hint { font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 14px; }
+.admin-hint { font-size: 0.82rem; color: var(--ink-soft); margin: 0; }
+#admin-content { margin-top: 16px; }
 .admin-add-form { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 .admin-add-form input {
   flex: 1;

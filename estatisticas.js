@@ -50,12 +50,20 @@ el('login-google').addEventListener('click', () => {
 el('login-microsoft').addEventListener('click', () => {
   supabase.auth.signInWithOAuth({ provider: 'azure', options: { redirectTo: redirectTo() } });
 });
-el('logout-btn').addEventListener('click', () => supabase.auth.signOut());
-el('forbidden-logout').addEventListener('click', () => supabase.auth.signOut());
+
+async function logout() {
+  await supabase.auth.signOut();
+  window.location.href = 'index.html';
+}
+el('logout-btn').addEventListener('click', logout);
+el('forbidden-logout').addEventListener('click', logout);
 
 // Cada mudança de sessão (login, refresh de token, etc.) invoca handleSession de novo;
 // este contador garante que só o resultado do pedido mais recente é desenhado no ecrã.
 let sessionRenderId = 0;
+
+const LOGIN_TIMEOUT_MS = 2 * 60 * 1000; // 2 minutos para concluir o login
+let loginTimeoutId = null;
 
 supabase.auth.onAuthStateChange((_event, session) => {
   handleSession(session);
@@ -63,11 +71,15 @@ supabase.auth.onAuthStateChange((_event, session) => {
 
 async function handleSession(session) {
   const myRenderId = ++sessionRenderId;
+  clearTimeout(loginTimeoutId);
 
   if (!session) {
     el('user-email').hidden = true;
     el('logout-btn').hidden = true;
     showState('state-login');
+    loginTimeoutId = setTimeout(() => {
+      window.location.href = 'index.html';
+    }, LOGIN_TIMEOUT_MS);
     return;
   }
 
@@ -105,6 +117,13 @@ async function handleSession(session) {
 }
 
 /* ---------- Admin: gestão de acessos ---------- */
+
+el('admin-edit-toggle').addEventListener('click', () => {
+  const content = el('admin-content');
+  const nowHidden = !content.hidden;
+  content.hidden = nowHidden;
+  el('admin-edit-toggle').textContent = nowHidden ? 'Editar' : 'Fechar';
+});
 
 async function loadAdminList(currentEmail, renderId) {
   const { data, error } = await supabase.from('authorized_emails').select('*').order('created_at', { ascending: true });
@@ -187,6 +206,50 @@ async function loadDashboard(renderId) {
   CATEGORICAL_QUESTIONS.forEach((q) => grid.appendChild(buildPieCard(q, rows)));
   grid.appendChild(buildSugestoesCard(rows));
   RATING_QUESTIONS.forEach((q) => grid.appendChild(buildRatingCard(q, rows)));
+}
+
+/* ---------- Exportar para Excel ---------- */
+
+el('export-excel-btn').addEventListener('click', exportToExcel);
+
+async function exportToExcel() {
+  const btn = el('export-excel-btn');
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'A preparar ficheiro...';
+
+  const { data: rows, error } = await supabase.from('survey_responses').select('*').order('id', { ascending: true });
+
+  btn.disabled = false;
+  btn.textContent = originalText;
+
+  if (error) {
+    alert(`Não foi possível exportar: ${error.message}`);
+    return;
+  }
+
+  const sheetRows = rows.map((r) => ({
+    ID: r.id,
+    Data: r.created_at ? new Date(r.created_at).toLocaleString('pt-PT') : '',
+    Sexo: r.sexo,
+    Idade: r.idade,
+    Modalidade: r.modalidade,
+    Residência: r.residencia,
+    Internet: r.internet,
+    Computadores: r.computadores,
+    'Livros e Revistas': r.livros,
+    'Manuais Escolares': r.manuais,
+    Filmes: r.filmes,
+    Atendimento: r.atendimento,
+    'Satisfação Geral': r.satisfacao,
+    Sugestões: (r.sugestoes || []).join('; '),
+  }));
+
+  const worksheet = XLSX.utils.json_to_sheet(sheetRows);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, 'Respostas');
+  const date = new Date().toISOString().slice(0, 10);
+  XLSX.writeFile(workbook, `biblioteca-escolar-respostas-${date}.xlsx`);
 }
 
 function average(rows, field) {

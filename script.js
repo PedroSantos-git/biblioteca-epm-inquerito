@@ -33,8 +33,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   inputs.forEach((input) => input.addEventListener('change', updateProgress));
 
+  // Perguntas opcionais (secção 2): permitir "desmarcar" clicando de novo na opção já selecionada.
+  // O clique nunca chega diretamente ao <input> (o <span> visível está por cima), por isso
+  // ouvimos no <label> — é ele que recebe o clique e decide se deixa a seleção nativa acontecer.
+  const optionalLabels = form ? Array.from(form.querySelectorAll('.optional-section .scale-opt')) : [];
+  const optionalSelected = {};
+  optionalLabels.forEach((label) => {
+    const radio = label.querySelector('input[type="radio"]');
+    if (!radio) return;
+    label.addEventListener('click', (event) => {
+      if (optionalSelected[radio.name] === radio) {
+        event.preventDefault();
+        radio.checked = false;
+        optionalSelected[radio.name] = null;
+        updateProgress();
+      } else {
+        optionalSelected[radio.name] = radio;
+      }
+    });
+  });
+
   function startSurvey() {
     if (form) form.reset();
+    Object.keys(optionalSelected).forEach((name) => { optionalSelected[name] = null; });
     updateProgress();
     showScreen('screen-form');
 
