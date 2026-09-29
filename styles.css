@@ -308,11 +308,8 @@ a { color: inherit; }
 /* ---------- Site footer ---------- */
 .site-footer { border-top: 1px solid var(--line); padding-block: 40px; }
 .footer-inner { display: flex; flex-direction: column; gap: 24px; align-items: center; }
-.footer-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 28px; }
-.footer-logo-epm { width: 46px; height: 46px; border-radius: 11px; }
-.footer-logo-text { display: flex; align-items: center; gap: 10px; text-align: left; }
-.footer-logo-text strong { display: block; font-size: 0.85rem; }
-.footer-logo-text span { display: block; font-size: 0.72rem; color: var(--ink-soft); max-width: 220px; }
+.footer-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
+.footer-logo-afpdm { height: 48px; width: auto; }
 .footer-copy { font-size: 0.78rem; color: var(--ink-soft); text-align: center; margin: 0; }
 
 /* ---------- Responsive ---------- */
